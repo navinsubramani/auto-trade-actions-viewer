@@ -6,6 +6,8 @@ from streamlit_calendar import calendar
 
 from stocklogdata import StockLogData
 
+from dotenv import load_dotenv
+
 # Set the page configuration
 st.set_page_config(
     page_title="AI Stock Options",
@@ -16,7 +18,8 @@ st.set_page_config(
 st.info("Note: This page is for viewing the GenAI algo training data and results. This is a experiemental and research page and the data is not used for trading or any finicial advice.")
 
 # Read the content from the .data folder
-stockdata = StockLogData(folder_path="D:\\petwork\\auto-trade-insights\\service\\auto-trade-actions-viewer\\.data")
+DATA_FOLDER = os.getenv("DATA_FOLDER", ".data")
+stockdata = StockLogData(folder_path=DATA_FOLDER)
 daystats, tradestats = stockdata.find_day_stats()
 #st.write(daystats)
 #st.write(tradestats)
