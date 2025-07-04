@@ -215,7 +215,7 @@ with sel3:
             st.write(str(daydata.iloc[selected_index]["Reason"]))
             st.markdown("**Note:**")
             st.write(str(daydata.iloc[selected_index]["Note"]))
-            st.write(f"AI Recommendation: {str(daydata.iloc[selected_index]["AI Recommendation"])}, Confidence: {str(daydata.iloc[selected_index]["Confidence"])}")
+            st.write(f"AI Recommendation: {str(daydata.iloc[selected_index]['AI Recommendation'])}, Confidence: {str(daydata.iloc[selected_index]['Confidence'])}")
 
         except Exception as e:
             st.error(f"Error displaying data: {e}")
